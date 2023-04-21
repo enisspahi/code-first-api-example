@@ -5,4 +5,10 @@ jobs:
   Publish-API-Docs:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - run: ./gradlew generateOpenApiDocs
+      - name: redoc-cli
+        uses: seeebiii/redoc-cli-github-action@v10
+        with:
+          args: 'bundle build/openapi.yaml  -o openapi.html'
