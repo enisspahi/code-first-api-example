@@ -14,12 +14,23 @@ Generated open api spec is converted into a static html page to be served on [gi
 ## Generating API specification without running the application
 `./gradlew generateOpenApiDocs`
 
-## Generating API Docs as a single page API Doc using [Redocly](https://redocly.com/)
+## Below are some examples of generating single page API Docs with multiple tools: 
+
+
+### Generating API Docs as a single page API Doc using [Redocly](https://redocly.com/)
 
 1. Ensure `redocly` is installed. Instructions: https://redocly.com/docs/redoc/deployment/cli/
 2. Run cli to generate single page API Doc
-`redocly build-docs build/openapi.yaml -o docs/index.html`
-3. Observe generated `docs/index.html` page
+`redocly build-docs build/openapi.yaml -o docs/redoc/index.html`
+3. Observe generated `docs/redoc/index.html` page
 
-A [github-actions](https://github.com/enisspahi/code-first-api-example/actions/workflows/api-docs-with-redoc.yml) job can trigger the API Docs generation and publishes the generated docs to github pages. 
+**[github-actions job](https://github.com/enisspahi/code-first-api-example/actions/workflows/api-docs-with-redoc.yml)** can trigger the API Docs generation and publishes the generated docs to github pages. 
+
+### Generating API Docs as a single page API Doc using [Rapidoc](https://rapidocweb.com/)
+
+1. Run the following command to copy the up-to-date Open API Spec under `docs/rapidoc/`
+`cp build/openapi.yaml docs/rapidoc/`
+2. Run and observe `docs/rapidoc/index.html` page
+
+**[github-actions job](https://github.com/enisspahi/code-first-api-example/blob/main/.github/workflows/api-docs-with-rapidoc.yml)** can trigger the API Docs generation and publishes the generated docs to github pages. 
 
