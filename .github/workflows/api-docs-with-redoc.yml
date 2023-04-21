@@ -24,6 +24,7 @@ jobs:
 
   Publish-API-Docs:
     runs-on: ubuntu-latest
+    needs: Generate-API-Docs
 
     permissions:
       pages: write      # to deploy to Pages
