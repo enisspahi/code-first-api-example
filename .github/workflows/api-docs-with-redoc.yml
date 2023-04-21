@@ -4,6 +4,15 @@ on: [workflow_dispatch]
 jobs:
   Publish-API-Docs:
     runs-on: ubuntu-latest
+
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
@@ -16,8 +25,6 @@ jobs:
         uses: seeebiii/redoc-cli-github-action@v10
         with:
           args: 'bundle build/openapi.yaml -o docs/openapi.html'
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: docs
-          branch: docs
+      - name: deploy 🚀
+        id: deploy
+        uses: actions/deploy-pages@v2
