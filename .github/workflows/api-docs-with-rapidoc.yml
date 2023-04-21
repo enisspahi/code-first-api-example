@@ -13,14 +13,11 @@ jobs:
           java-version: '17'
           cache: 'gradle'
       - run: ./gradlew generateOpenApiDocs --no-daemon
-      - name: redoc-cli
-        uses: seeebiii/redoc-cli-github-action@v10
-        with:
-          args: 'bundle build/openapi.yaml -o docs/redoc/index.html'
+      - run: cp build/openapi.yaml docs/rapidoc/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'docs/redoc/'
+          path: 'docs/rapidoc/'
 
   Publish-API-Docs:
     runs-on: ubuntu-latest
