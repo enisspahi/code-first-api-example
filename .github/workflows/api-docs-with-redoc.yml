@@ -28,7 +28,7 @@ jobs:
       - name: 'Upload docs as Artifact'
         uses: actions/upload-artifact@v3
         with:
-          name: github-actions
+          name: github-pages
           path: docs/openapi.html
           retention-days: 5
       - name: deploy 🚀
