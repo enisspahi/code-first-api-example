@@ -20,17 +20,17 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'gradle'
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
       - run: ./gradlew generateOpenApiDocs --no-daemon
       - name: redoc-cli
         uses: seeebiii/redoc-cli-github-action@v10
         with:
           args: 'bundle build/openapi.yaml -o docs/openapi.html'
-      - name: 'Upload docs as Artifact'
-        uses: actions/upload-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: github-pages
-          path: docs/openapi.html
-          retention-days: 5
-      - name: deploy 🚀
-        id: deploy
+          path: 'docs/'
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v2
