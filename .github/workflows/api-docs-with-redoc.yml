@@ -15,4 +15,9 @@ jobs:
       - name: redoc-cli
         uses: seeebiii/redoc-cli-github-action@v10
         with:
-          args: 'bundle build/openapi.yaml  -o openapi.html'
+          args: 'bundle build/openapi.yaml -o docs/openapi.html'
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs
+          branch: docs
