@@ -1,0 +1,8 @@
+name: Publish API Docs with redoc
+run-name: ${{ github.actor }} is publishing API Docs with redoc 🚀
+on: [workflow_dispatch]
+jobs:
+  Publish-API-Docs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ./gradlew generateOpenApiDocs
