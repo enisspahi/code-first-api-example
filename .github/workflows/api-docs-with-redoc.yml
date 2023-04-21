@@ -25,6 +25,12 @@ jobs:
         uses: seeebiii/redoc-cli-github-action@v10
         with:
           args: 'bundle build/openapi.yaml -o docs/openapi.html'
+      - name: 'Upload docs as Artifact'
+        uses: actions/upload-artifact@v3
+        with:
+          name: github-actions
+          path: docs/openapi.html
+          retention-days: 5
       - name: deploy 🚀
         id: deploy
         uses: actions/deploy-pages@v2
