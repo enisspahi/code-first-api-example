@@ -1,6 +1,6 @@
 # Code First API Example
 
-This repository contains a Spring Boot Web application as en example, yo generate OpenAPI 3 specification on `code-first` basis.
+This repository contains a Spring Boot Web application as an example, to generate OpenAPI 3 specification on `code-first` basis.
 Generated open api spec is converted into a static html page to be served on [github pages](https://enisspahi.github.io/code-first-api-example/). 
 
 ## Starting the application
