@@ -5,9 +5,13 @@ jobs:
   Publish-API-Docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - run: ./gradlew generateOpenApiDocs
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+      - run: ./gradlew generateOpenApiDocs --no-daemon
       - name: redoc-cli
         uses: seeebiii/redoc-cli-github-action@v10
         with:
