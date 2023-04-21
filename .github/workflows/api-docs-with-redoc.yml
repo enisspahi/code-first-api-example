@@ -26,7 +26,7 @@ jobs:
       - name: redoc-cli
         uses: seeebiii/redoc-cli-github-action@v10
         with:
-          args: 'bundle build/openapi.yaml -o docs/openapi.html'
+          args: 'bundle build/openapi.yaml -o docs/index.html'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
