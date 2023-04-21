@@ -1,5 +1,5 @@
-name: Publish API Docs with redoc
-run-name: ${{ github.actor }} is publishing API Docs with redoc 🚀
+name: Publish API Docs with rapidoc
+run-name: ${{ github.actor }} is publishing API Docs with rapidoc 🚀
 on: [workflow_dispatch]
 jobs:
   Generate-API-Docs:
