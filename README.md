@@ -32,7 +32,7 @@ Generated open api spec is converted into a static html page to be served on [gi
 `cp build/openapi.yaml docs/rapidoc/`
 2. Run and observe `docs/rapidoc/index.html` page
 
-**[github-actions job](https://github.com/enisspahi/code-first-api-example/blob/main/.github/workflows/api-docs-with-rapidoc.yml)** can trigger the API Docs generation and publishes the generated docs to github pages. 
+**[github-actions job](https://github.com/enisspahi/code-first-api-example/actions/workflows/api-docs-with-rapidoc.yml)** can trigger the API Docs generation and publishes the generated docs to github pages. 
 
 ### Generating API Docs as a single page API Doc using [Stoplight ELements](https://stoplight.io/open-source/elements)
 
@@ -40,5 +40,5 @@ Generated open api spec is converted into a static html page to be served on [gi
    `cp build/openapi.yaml docs/elements/`
 2. Run and observe `docs/elements/index.html` page
 
-**[github-actions job](https://github.com/enisspahi/code-first-api-example/blob/main/.github/workflows/api-docs-with-rapidoc.yml)** can trigger the API Docs generation and publishes the generated docs to github pages. 
+**[github-actions job](https://github.com/enisspahi/code-first-api-example/actions/workflows/api-docs-with-elements.yml)** can trigger the API Docs generation and publishes the generated docs to github pages. 
 
