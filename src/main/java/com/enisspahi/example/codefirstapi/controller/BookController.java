@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/books")
+@CrossOrigin(origins = "https://enisspahi.github.io")
 @Tag(name = "Books API")
 public class BookController {
 
