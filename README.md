@@ -34,7 +34,7 @@ Generated open api spec is converted into a static html page to be served on [gi
 
 **[github-actions job](https://github.com/enisspahi/code-first-api-example/actions/workflows/api-docs-with-rapidoc.yml)** can trigger the API Docs generation and publishes the generated docs to github pages. 
 
-### Generating API Docs as a single page API Doc using [Stoplight ELements](https://stoplight.io/open-source/elements)
+### Generating API Docs as a single page API Doc using [Stoplight Elements](https://stoplight.io/open-source/elements)
 
 1. Run the following command to copy the up-to-date Open API Spec under `docs/elements/`
    `cp build/openapi.yaml docs/elements/`
