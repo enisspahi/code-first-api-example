@@ -1,7 +1,7 @@
 package com.enisspahi.example.codefirstapi.controller;
 
+import com.enisspahi.example.codefirstapi.model.Error;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -9,10 +9,16 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class ErrorHandler {
 
-    @ExceptionHandler(BookNotFound.class)
+    @ExceptionHandler(RecipeNotFound.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity notFound() {
-        return ResponseEntity.notFound().build();
+    public Error notFound() {
+        return new Error(Error.ErrorCode.NOT_FOUND, "Not found");
+    }
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public Error unexpected() {
+        return new Error(Error.ErrorCode.UNEXPECTED, "Unexpected error");
     }
 
 }
