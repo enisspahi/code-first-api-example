@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "https://enisspahi.github.io")
 @Tag(name = "Recipes API")
 public class RecipeController {
 
