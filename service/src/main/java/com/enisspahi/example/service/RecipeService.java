@@ -1,7 +1,7 @@
-package com.enisspahi.example.codefirstapi.service;
+package com.enisspahi.example.service;
 
-import com.enisspahi.example.codefirstapi.model.Recipe;
-import com.enisspahi.example.codefirstapi.repository.RecipeRepository;
+import com.enisspahi.example.repository.RecipeRepository;
+import com.enisspahi.example.model.Recipe;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

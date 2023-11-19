@@ -1,4 +1,4 @@
-package com.enisspahi.example.codefirstapi.model;
+package com.enisspahi.example.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -16,7 +16,7 @@ public record Recipe(@Schema(description = "Title of the recipe", example = "Chi
                      @Schema(description = "Served for persons", example = "4")
                      Integer servings,
                      @Schema(description = "Step by step instructions")
-                     ArrayList<String> instructions,
+                     List<String> instructions,
                      @Schema(description = "Nutrition facts")
                      List<NutritionFact> nutritionFacts) {
 

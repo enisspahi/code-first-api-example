@@ -21,7 +21,7 @@ Generated open api spec is converted into a static html page to be served on [gi
 
 1. Ensure `redocly` is installed. Instructions: https://redocly.com/docs/redoc/deployment/cli/
 2. Run cli to generate single page API Doc
-`redocly build-docs build/openapi.yaml -o docs/redoc/index.html`
+`redocly build-docs service/build/openapi.yaml -o docs/redoc/index.html`
 3. Observe generated `docs/redoc/index.html` page
 
 **[github-actions job](https://github.com/enisspahi/code-first-api-example/actions/workflows/api-docs-with-redoc.yml)** can trigger the API Docs generation and publishes the generated docs to github pages. 
@@ -29,7 +29,7 @@ Generated open api spec is converted into a static html page to be served on [gi
 ### Generating API Docs as a single page API Doc using [Rapidoc](https://rapidocweb.com/)
 
 1. Run the following command to copy the up-to-date Open API Spec under `docs/rapidoc/`
-`cp build/openapi.yaml docs/rapidoc/`
+`cp service/build/openapi.yaml docs/rapidoc/`
 2. Run and observe `docs/rapidoc/index.html` page
 
 **[github-actions job](https://github.com/enisspahi/code-first-api-example/actions/workflows/api-docs-with-rapidoc.yml)** can trigger the API Docs generation and publishes the generated docs to github pages. 
@@ -37,7 +37,7 @@ Generated open api spec is converted into a static html page to be served on [gi
 ### Generating API Docs as a single page API Doc using [Stoplight Elements](https://stoplight.io/open-source/elements)
 
 1. Run the following command to copy the up-to-date Open API Spec under `docs/elements/`
-   `cp build/openapi.yaml docs/elements/`
+   `cp service/build/openapi.yaml docs/elements/`
 2. Run and observe `docs/elements/index.html` page
 
 **[github-actions job](https://github.com/enisspahi/code-first-api-example/actions/workflows/api-docs-with-elements.yml)** can trigger the API Docs generation and publishes the generated docs to github pages. 

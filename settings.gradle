@@ -1,1 +1,3 @@
 rootProject.name = 'code-first-api-example'
+include 'service'
+

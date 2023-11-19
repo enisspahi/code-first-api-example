@@ -1,7 +1,7 @@
-package com.enisspahi.example.codefirstapi.controller;
+package com.enisspahi.example.controller;
 
-import com.enisspahi.example.codefirstapi.model.Recipe;
-import com.enisspahi.example.codefirstapi.service.RecipeService;
+import com.enisspahi.example.model.Recipe;
+import com.enisspahi.example.service.RecipeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;

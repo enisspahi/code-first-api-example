@@ -1,20 +1,19 @@
-package com.enisspahi.example.codefirstapi.repository;
+package com.enisspahi.example.repository;
 
-import com.enisspahi.example.codefirstapi.model.Recipe;
+import com.enisspahi.example.model.Recipe;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Component
-class FakeRecipeRepository implements RecipeRepository {
+@Slf4j
+class RecipeYmlRepository implements RecipeRepository {
 
-    private final List<Recipe> recipes = new ArrayList();
+    private final List<Recipe> recipes = YamlSourceReader.readFromYaml();
 
     @Override
     public Recipe save(Recipe recipe) {
@@ -37,14 +36,22 @@ class FakeRecipeRepository implements RecipeRepository {
     }
 
     private static Predicate<Recipe> filterByIngredients(List<String> ingredients) {
-        if (CollectionUtils.isEmpty(ingredients)) return recipe -> true;
-        return recipe -> recipe.ingredients().stream().map(Recipe.Ingredient::name)
-                .anyMatch(name -> ingredients.contains(name));
+        return recipe -> ingredients.stream()
+                .map(String::toLowerCase)
+                .allMatch(searchedIngredient ->
+                        recipe.ingredients().stream()
+                                .map(Recipe.Ingredient::name)
+                                .map(String::toLowerCase)
+                                .anyMatch(ingredientOfRecipe -> ingredientOfRecipe.contains(searchedIngredient))
+                );
     }
 
     private static Predicate<Recipe> filterByNutritionFacts(List<Recipe.NutritionFact> nutritionFacts) {
-        if (CollectionUtils.isEmpty(nutritionFacts)) return recipe -> true;
-        return recipe -> recipe.nutritionFacts().stream().anyMatch(nutritionFacts::contains);
+        return recipe -> nutritionFacts.stream()
+                .allMatch(searchedNutritionFact ->
+                        recipe.nutritionFacts().stream()
+                                .anyMatch(nutritionFactOfRecipe -> nutritionFactOfRecipe == searchedNutritionFact)
+                );
     }
 
 }

@@ -1,3 +1,3 @@
-package com.enisspahi.example.codefirstapi.controller;
+package com.enisspahi.example.controller;
 
 public class RecipeNotFound extends RuntimeException { }

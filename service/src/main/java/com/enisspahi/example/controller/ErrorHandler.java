@@ -1,6 +1,6 @@
-package com.enisspahi.example.codefirstapi.controller;
+package com.enisspahi.example.controller;
 
-import com.enisspahi.example.codefirstapi.model.Error;
+import com.enisspahi.example.model.Error;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,4 +1,4 @@
-package com.enisspahi.example.codefirstapi.model;
+package com.enisspahi.example.model;
 
 public record Error(ErrorCode code, String message) {
 

@@ -1,6 +1,6 @@
-package com.enisspahi.example.codefirstapi.repository;
+package com.enisspahi.example.repository;
 
-import com.enisspahi.example.codefirstapi.model.Recipe;
+import com.enisspahi.example.model.Recipe;
 
 import java.util.List;
 import java.util.Optional;
