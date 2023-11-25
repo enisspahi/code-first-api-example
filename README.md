@@ -6,7 +6,7 @@ Generated open api spec is converted into a static html page to be served on [gi
 ## Starting the application
 
 1. Start the application running:
-`./gradlew bootRun`
+`./gradlew :service:bootRun`
 2. Observe open api specification:
 * In [json format](http://localhost:8080/api-docs)
 * In [yaml format](http://localhost:8080/api-docs.yaml)
