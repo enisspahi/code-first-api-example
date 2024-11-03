@@ -2,7 +2,6 @@ package com.enisspahi.example.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public record Recipe(@Schema(description = "Title of the recipe", example = "Chilli sin Carne")

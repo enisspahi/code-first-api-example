@@ -25,11 +25,6 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 }
 
-tasks.withType(JavaCompile) {
-    options.compilerArgs << "-Xlint:unchecked"
-}
-
-
 test {
     useJUnitPlatform()
 }
@@ -39,4 +34,6 @@ openApi {
     outputFileName.set("openapi.yaml")
 }
 
-
+tasks.build {
+    finalizedBy("generateOpenApiDocs")
+}

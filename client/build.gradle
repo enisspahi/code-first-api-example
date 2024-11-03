@@ -45,6 +45,7 @@ openApiGenerate {
     apiPackage = "com.enisspahi.example.api"
     invokerPackage = "com.enisspahi.example.api.invoker"
     modelPackage = "com.enisspahi.example.api.model"
+    apiNameSuffix = "."
     configOptions = [
             library: "native",
             dateLibrary: "java8",
@@ -53,9 +54,6 @@ openApiGenerate {
     ]
 }
 
-tasks.withType(JavaCompile) {
-    options.compilerArgs << "-Xlint:deprecation"
-}
-
+tasks.openApiGenerate.dependsOn(":service:generateOpenApiDocs")
 
 

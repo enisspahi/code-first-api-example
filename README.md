@@ -3,7 +3,7 @@
 This repository contains a Spring Boot Web application as an example, to generate OpenAPI 3 specification on `code-first` basis.
 Generated open api spec is converted into a static html page to be served on [github pages](https://enisspahi.github.io/code-first-api-example/). 
 
-## Starting the application
+## Starting the Service
 
 1. Start the application running:
 `./gradlew :service:bootRun`
@@ -14,8 +14,13 @@ Generated open api spec is converted into a static html page to be served on [gi
 ## Generating API specification without running the application
 `./gradlew generateOpenApiDocs`
 
-## Below are some examples of generating single page API Docs with multiple tools: 
+## Starting the Client
 
+1. Start the application running:
+   `./gradlew :client:bootRun`
+2. Open client application in browser [http://localhost:8082](http://localhost:8082)
+
+## Below are some examples of generating single page API Docs with multiple tools:
 
 ### Generating API Docs as a single page API Doc using [Redocly](https://redocly.com/)
 
